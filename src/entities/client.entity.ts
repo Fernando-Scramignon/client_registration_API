@@ -1,6 +1,6 @@
 import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn } from "typeorm";
 
-@Entity()
+@Entity("Client")
 export class Client {
     @PrimaryGeneratedColumn("uuid")
     readonly id: string
