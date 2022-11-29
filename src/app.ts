@@ -4,7 +4,7 @@ import express from "express";
 
 import { appRoutes } from "./routes";
 
-import { errorHandlingMiddleware } from "./migrations/errorHandling.middleware";
+import { errorHandlingMiddleware } from "./middlewares/errorHandling.middleware";
 
 
 const app = express();
