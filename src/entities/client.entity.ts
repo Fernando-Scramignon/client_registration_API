@@ -9,6 +9,12 @@ export class Client {
     @PrimaryGeneratedColumn("uuid")
     readonly id: string;
 
+    @Column({ length: 64, unique: true })
+    username: string;
+
+    @Column({ length: 32 })
+    password: string;
+
     @Column({ length: 256 })
     name: string;
 
