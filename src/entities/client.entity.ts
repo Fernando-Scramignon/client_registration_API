@@ -1,4 +1,6 @@
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, OneToMany } from "typeorm";
+
+import { ClientPhoneNumber } from "./clientPhoneNumber.entity";
 
 @Entity("Client")
 export class Client {
@@ -10,4 +12,7 @@ export class Client {
 
     @CreateDateColumn()
     createdAt: Date
+
+    @OneToMany(() => ClientPhoneNumber, (PhoneNumber) => PhoneNumber.client)
+    phoneNumbers: ClientPhoneNumber[]
 }
