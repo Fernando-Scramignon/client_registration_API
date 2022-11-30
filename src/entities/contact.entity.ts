@@ -1,7 +1,8 @@
-import { Column, PrimaryGeneratedColumn, Entity, OneToMany } from "typeorm";
+import { Column, PrimaryGeneratedColumn, Entity, OneToMany, ManyToOne } from "typeorm";
 
 import { ContactPhoneNumber } from "./contactPhoneNumber.entity";
 import { ContactEmail } from "./contactEmail.entity";
+import { Client } from "./client.entity";
 
 @Entity("Contact")
 export class Contact {
@@ -16,4 +17,7 @@ export class Contact {
 
     @OneToMany(() => ContactEmail, email => email.contact)
     emails: ContactEmail[];
+
+    @ManyToOne(() => Client, (client) => client.contacts, { onDelete: "CASCADE" })
+    client: Client;
 }

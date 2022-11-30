@@ -2,6 +2,7 @@ import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, OneToMany } f
 
 import { ClientPhoneNumber } from "./clientPhoneNumber.entity";
 import { ClientEmail } from "./clientEmail.entity";
+import { Contact } from "./contact.entity";
 
 @Entity("Client")
 export class Client {
@@ -19,4 +20,7 @@ export class Client {
 
     @OneToMany(() => ClientEmail, clientEmail => clientEmail.client)
     emails: ClientEmail[];
+
+    @OneToMany(() => Contact, (contact) => contact.client)
+    contacts: Contact[]
 }
