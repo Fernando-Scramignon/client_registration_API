@@ -1,4 +1,6 @@
-import { Column, PrimaryGeneratedColumn, Entity } from "typeorm";
+import { Column, PrimaryGeneratedColumn, Entity, OneToMany } from "typeorm";
+
+import { ContactPhoneNumber } from "./contactPhoneNumber.entity";
 
 @Entity("Contact")
 export class Contact {
@@ -7,4 +9,7 @@ export class Contact {
 
     @Column({ length: 256, nullable: false })
     name: string
+
+    @OneToMany(() => ContactPhoneNumber, phoneNumber => phoneNumber.contact)
+    phoneNumbers: ContactPhoneNumber[]
 }
