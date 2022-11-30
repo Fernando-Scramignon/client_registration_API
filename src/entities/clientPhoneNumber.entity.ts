@@ -10,6 +10,6 @@ export class ClientPhoneNumber {
     isMain: boolean = false;
 
     @ManyToOne(() => Client, (Client) => Client.phoneNumbers, { onDelete: "CASCADE" })
-    client: Client
+    client: Client;
 
 };

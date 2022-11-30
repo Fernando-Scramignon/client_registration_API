@@ -1,18 +1,22 @@
 import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, OneToMany } from "typeorm";
 
 import { ClientPhoneNumber } from "./clientPhoneNumber.entity";
+import { ClientEmail } from "./clientEmail.entity";
 
 @Entity("Client")
 export class Client {
     @PrimaryGeneratedColumn("uuid")
-    readonly id: string
+    readonly id: string;
 
     @Column({ length: 256 })
-    name: string
+    name: string;
 
     @CreateDateColumn()
-    createdAt: Date
+    createdAt: Date;
 
     @OneToMany(() => ClientPhoneNumber, (PhoneNumber) => PhoneNumber.client)
-    phoneNumbers: ClientPhoneNumber[]
+    phoneNumbers: ClientPhoneNumber[];
+
+    @OneToMany(() => ClientEmail, clientEmail => clientEmail.client)
+    emails: ClientEmail[];
 }
