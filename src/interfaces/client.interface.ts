@@ -7,7 +7,6 @@ export interface IClientCreation {
 export interface IClientListing {
     name: string,
     username: string,
-    password: string,
     emails: Array<string>,
     phoneNumbers: Array<string>
 }
