@@ -26,6 +26,6 @@ export async function createClientService(data: IClientCreation): Promise<object
 
 async function uniquenessValidator(dataSourceRepository: any, data: IClientCreation): Promise<void> {
     const clientAlreadyExists = await dataSourceRepository.findOne({ where: { username: data.username } })
-    console.log(clientAlreadyExists)
+
     if (clientAlreadyExists) throw new AppError(409, "Client already exists");
 }
