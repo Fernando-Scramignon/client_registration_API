@@ -7,10 +7,13 @@ import { listClientController } from "../controllers/client/listClient.controlle
 
 // middlewares
 import { verifyAuthMiddleware } from "../middlewares/verifyAuth.middleware";
+import { createClientEmailController } from "../controllers/client/createClientEmail.controller";
 
 
 export function clientRoutes(app: Express): void {
     app.post("/clients", createClientController);
     app.get("/clients", verifyAuthMiddleware, listClientController);
     app.post("/clients/login", loginClientController);
+
+    app.post("/clients/email", verifyAuthMiddleware, createClientEmailController);
 }

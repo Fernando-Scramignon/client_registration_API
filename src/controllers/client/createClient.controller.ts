@@ -12,7 +12,7 @@ export async function createClientController(req: Request, res: Response) {
     verifyRequestClientData(data)
 
     const output = await createClientService(data)
-    return res.json(output)
+    return res.status(201).json(output)
 }
 
 // if it fails, it throws an app error
