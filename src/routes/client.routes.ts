@@ -11,6 +11,7 @@ import { createClientPhoneNumberController } from "../controllers/client/createC
 
 // middlewares
 import { verifyAuthMiddleware } from "../middlewares/verifyAuth.middleware";
+import { deleteClientEmailController } from "../controllers/client/deleteClientEmail.controller";
 
 
 export function clientRoutes(app: Express): void {
@@ -22,5 +23,7 @@ export function clientRoutes(app: Express): void {
     app.post("/clients/login", loginClientController);
 
     app.post("/clients/emails", verifyAuthMiddleware, createClientEmailController);
+    app.delete("/clients/emails/:emailAddress", verifyAuthMiddleware, deleteClientEmailController);
+
     app.post("/clients/phoneNumbers", verifyAuthMiddleware, createClientPhoneNumberController);
 }
