@@ -11,7 +11,7 @@ export async function createClientEmailController(req: Request, res: Response) {
     const { emailAddress, isMain } = req.body;
 
     if (isMain) {
-        if ((typeof isMain) !== "boolean") throw new AppError(400, "is main must be a boolean value")
+        if ((typeof isMain) !== "boolean") throw new AppError(400, "isMain must be a boolean value")
     }
 
     emailValidator(emailAddress);

@@ -7,6 +7,7 @@ import { listClientController } from "../controllers/client/listClient.controlle
 import { updateClientController } from "../controllers/client/updateClient.controller";
 import { deleteClientController } from "../controllers/client/deleteClient.controller";
 import { createClientEmailController } from "../controllers/client/createClientEmail.controller";
+import { createClientPhoneNumberController } from "../controllers/client/createClientPhoneNumber.controller";
 
 // middlewares
 import { verifyAuthMiddleware } from "../middlewares/verifyAuth.middleware";
@@ -20,6 +21,6 @@ export function clientRoutes(app: Express): void {
 
     app.post("/clients/login", loginClientController);
 
-    app.post("/clients/email", verifyAuthMiddleware, createClientEmailController);
-
+    app.post("/clients/emails", verifyAuthMiddleware, createClientEmailController);
+    app.post("/clients/phoneNumbers", verifyAuthMiddleware, createClientPhoneNumberController);
 }

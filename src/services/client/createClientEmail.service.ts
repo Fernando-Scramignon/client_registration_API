@@ -13,11 +13,11 @@ export async function createClientEmailService(username: string, email: string, 
     const client = await clientRep.findOne({ where: { username: username } });
 
 
-    const doesEmailAlreadyExists = await clientEmailRep.findOne({ where: { emailAddress: email } })
+    const doesEmailAlreadyExists = await clientEmailRep.findOne({ where: { emailAddress: email } });
     if (doesEmailAlreadyExists) throw new AppError(409, "email already exists");
 
     if (isMain) {
-        const mainEmail = await clientEmailRep.findOne({ where: { isMain: true } })
+        const mainEmail = await clientEmailRep.findOne({ where: { isMain: true } });
         if (mainEmail) {
             mainEmail.isMain = false;
             clientEmailRep.save(mainEmail);

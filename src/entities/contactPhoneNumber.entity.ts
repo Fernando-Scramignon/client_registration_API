@@ -4,8 +4,8 @@ import { Contact } from "./contact.entity";
 
 @Entity("ContactPhoneNumber")
 export class ContactPhoneNumber {
-    @PrimaryColumn({ unique: true })
-    phoneNumber: number;
+    @PrimaryColumn({ unique: true, length: 15 })
+    phoneNumber: string;
 
     @Column({ default: false, nullable: false })
     isMain: boolean = false;

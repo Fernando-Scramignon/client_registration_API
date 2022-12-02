@@ -3,8 +3,8 @@ import { Client } from "./client.entity";
 
 @Entity("ClientPhoneNumber")
 export class ClientPhoneNumber {
-    @PrimaryColumn({ unique: true })
-    phoneNumber: number;
+    @PrimaryColumn({ unique: true, length: 15 })
+    phoneNumber: string;
 
     @Column({ nullable: false, default: false })
     isMain: boolean = false;

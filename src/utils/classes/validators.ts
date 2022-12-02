@@ -30,8 +30,16 @@ export class Validators {
 
     }
 
-    static async validateUsernameUniqueness(username: string, objectRepository: any) {
+    static async validateUsernameUniqueness(username: string, objectRepository: any): Promise<void> {
         const doesClientAlreadyExists = await objectRepository.findOne({ where: { username: username } });
         if (doesClientAlreadyExists) throw new AppError(409, "username is already taken");
+    }
+
+    static validatePhoneNumber(phoneNumber: string): void {
+        if ((typeof phoneNumber) !== "string") throw new Error("phoneNumber must be an integer");
+        const isNotNumberOnly = (/[^0-9.]/g.test(phoneNumber));
+        if (isNotNumberOnly) throw new AppError(400, "phone number must be integer only")
+        if (phoneNumber.length > 15) throw new AppError(400, "phoneNumber must be lower than 15 digits");
+
     }
 }
