@@ -19,3 +19,9 @@ export interface IClientLogin {
 export interface IClientToken {
     token: string
 }
+
+export interface IClientUpdate {
+    username?: string,
+    password?: string,
+    name?: string
+}
