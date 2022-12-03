@@ -19,4 +19,4 @@ tecnologies:
 
 
 ## ER Diagram
-![DER](ERDiagram.jpg)
+![DER](ERdiagram.jpg)
