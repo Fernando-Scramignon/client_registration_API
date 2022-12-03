@@ -4,6 +4,7 @@ import { Express } from "express";
 // controllers
 import { createContactController } from "../controllers/contact/createContact.controller";
 import { createContactEmailController } from "../controllers/contact/createContactEmail.controller";
+import { createContactPhoneNumberController } from "../controllers/contact/createContactPhoneNumber.controller";
 import { deleteContactController } from "../controllers/contact/deleteContact.controller";
 import { deleteContactEmailController } from "../controllers/contact/deleteContactEmail.controller";
 import { listContactsController } from "../controllers/contact/listContacts.controller";
@@ -23,4 +24,6 @@ export function contactRoutes(app: Express) {
 
     app.post("/contacts/:contactId/emails", verifyAuthMiddleware, createContactEmailController);
     app.delete("/contacts/:contactId/emails/:emailId", verifyAuthMiddleware, deleteContactEmailController);
+
+    app.post("/contacts/:contactId/phoneNumbers", verifyAuthMiddleware, createContactPhoneNumberController);
 }

@@ -1,6 +1,3 @@
-import { ContactEmail } from "../entities/contactEmail.entity";
-import { ContactPhoneNumber } from "../entities/contactPhoneNumber.entity";
-
 export interface IContactCreation {
     name: string,
     emailAddress: string,
@@ -13,5 +10,10 @@ export interface IContactUpdate {
 
 export interface IContactEmailCreation {
     emailAddress: string,
+    isMain?: boolean
+}
+
+export interface IContactPhoneNumberCreation {
+    phoneNumber: string,
     isMain?: boolean
 }
