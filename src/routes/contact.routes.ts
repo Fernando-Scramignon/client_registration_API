@@ -7,6 +7,7 @@ import { createContactEmailController } from "../controllers/contact/createConta
 import { createContactPhoneNumberController } from "../controllers/contact/createContactPhoneNumber.controller";
 import { deleteContactController } from "../controllers/contact/deleteContact.controller";
 import { deleteContactEmailController } from "../controllers/contact/deleteContactEmail.controller";
+import { deleteContactPhoneNumberController } from "../controllers/contact/deleteContactPhoneNumber.controller";
 import { listContactsController } from "../controllers/contact/listContacts.controller";
 import { listSpecificContactController } from "../controllers/contact/listSpecificContact.controller";
 import { updateContactController } from "../controllers/contact/updateContact.controller";
@@ -26,4 +27,5 @@ export function contactRoutes(app: Express) {
     app.delete("/contacts/:contactId/emails/:emailId", verifyAuthMiddleware, deleteContactEmailController);
 
     app.post("/contacts/:contactId/phoneNumbers", verifyAuthMiddleware, createContactPhoneNumberController);
+    app.delete("/contacts/:contactId/phoneNumbers/:phoneNumberId", verifyAuthMiddleware, deleteContactPhoneNumberController);
 }

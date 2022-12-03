@@ -11,7 +11,6 @@ export async function deleteClientPhoneNumberService(username: string, phoneNumb
     const clientPhoneNumbers = client.phoneNumbers;
     const phone = clientPhoneNumbers.find(phone => phone.phoneNumber == phoneNumber);
     if (!phone) throw new AppError(404, "phone number not found");
-    console.log(phone)
 
 
     const clientPhoneNumberRep = appDataSource.getRepository(ClientPhoneNumber);

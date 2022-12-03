@@ -18,14 +18,20 @@ export async function deleteContactEmailService(username: string, contactId: str
     const contact = client.contacts.find(contact => contact.id === contactId);
     if (!contact) throw new AppError(404, "contact not found");
 
-    console.log(contact);
     // looks for email
     const email = contact.emails.find(email => email.id == emailId);
     if (!email) throw new AppError(404, "email not found");
-    console.log(email)
-    // if emails exists, delete email
+
     const contactEmailRep = appDataSource.getRepository(ContactEmail);
-    console.log(await contactEmailRep.delete(email));
+
+    if (email.isMain && contact.emails.length > 1) {
+        const newMainEmail = contact.emails[0];
+        newMainEmail.isMain = true;
+        contactEmailRep.save(newMainEmail);
+    }
+
+    // if emails exists, delete email
+    await contactEmailRep.delete(email);
 
 
 }
