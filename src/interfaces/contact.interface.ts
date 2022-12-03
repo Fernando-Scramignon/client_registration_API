@@ -10,3 +10,8 @@ export interface IContactCreation {
 export interface IContactUpdate {
     name: string
 }
+
+export interface IContactEmailCreation {
+    emailAddress: string,
+    isMain?: boolean
+}
