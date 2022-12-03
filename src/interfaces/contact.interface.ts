@@ -6,3 +6,7 @@ export interface IContactCreation {
     emailAddress: string,
     phoneNumber: string
 }
+
+export interface IContactUpdate {
+    name: string
+}
