@@ -13,6 +13,7 @@ import { deleteClientEmailController } from "../controllers/client/deleteClientE
 
 // middlewares
 import { verifyAuthMiddleware } from "../middlewares/verifyAuth.middleware";
+import { listClientMainInfoController } from "../controllers/client/listClientMainInfo.controller";
 
 
 export function clientRoutes(app: Express): void {
@@ -28,4 +29,6 @@ export function clientRoutes(app: Express): void {
 
     app.post("/clients/phoneNumbers", verifyAuthMiddleware, createClientPhoneNumberController);
     app.delete("/clients/phoneNumbers/:phoneNumber", verifyAuthMiddleware, deleteClientPhoneNumber);
+
+    app.get("/clients/mainInfo", verifyAuthMiddleware, listClientMainInfoController);
 }

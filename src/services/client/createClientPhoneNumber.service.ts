@@ -9,7 +9,12 @@ import { passwordPrunner } from "../../utils/functions/passwordPruner";
 export async function createClientPhoneNumberService(username: string, phoneNumber: string, isMain: boolean): Promise<ClientPhoneNumber> {
     const clientRep = appDataSource.getRepository(Client);
     const clientPhoneNumberRep = appDataSource.getRepository(ClientPhoneNumber);
-    const client = await clientRep.findOne({ where: { username: username } });
+    const client = await clientRep.findOne(
+        {
+            where: { username: username },
+            relations: { phoneNumbers: true }
+        }
+    );
     if (!client) throw new AppError(404, "client not found");
 
     const doesPhoneNumberAlreadyExists = await clientPhoneNumberRep.findOne(
@@ -31,7 +36,7 @@ export async function createClientPhoneNumberService(username: string, phoneNumb
 
     const clientPhone = new ClientPhoneNumber();
     clientPhone.phoneNumber = phoneNumber;
-    clientPhone.isMain = isMain || false;
+    clientPhone.isMain = client.phoneNumbers.length !== 0 ? isMain || false : true;
     clientPhone.client = client
     // i short circuited because isMain can be undefined
 
@@ -46,5 +51,6 @@ export async function createClientPhoneNumberService(username: string, phoneNumb
     const formatedClient = passwordPrunner(output.client);
 
     output.client = formatedClient;
+    delete output.client.phoneNumbers;
     return output;
 }

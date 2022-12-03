@@ -10,7 +10,13 @@ import { passwordPrunner } from "../../utils/functions/passwordPruner";
 export async function createClientEmailService(username: string, email: string, isMain: boolean) {
     const clientRep = appDataSource.getRepository(Client);
     const clientEmailRep = appDataSource.getRepository(ClientEmail);
-    const client = await clientRep.findOne({ where: { username: username } });
+    const client = await clientRep.findOne(
+        {
+            where: { username: username },
+            relations: { emails: true }
+        }
+    );
+    if (!client) throw new AppError(404, "client not found");
 
 
     const doesEmailAlreadyExists = await clientEmailRep.findOne({ where: { emailAddress: email } });
@@ -27,7 +33,7 @@ export async function createClientEmailService(username: string, email: string, 
 
     const clientEmail = new ClientEmail();
     clientEmail.emailAddress = email;
-    clientEmail.isMain = isMain || false;
+    clientEmail.isMain = client.emails.length !== 0 ? isMain || false : true;
     clientEmail.client = client!;
     // i short circuited because isMain can be undefined
 
@@ -37,5 +43,6 @@ export async function createClientEmailService(username: string, email: string, 
     const formatedClient = passwordPrunner(output.client)
 
     output.client = formatedClient;
+    delete output.client.emails;
     return output
 }
