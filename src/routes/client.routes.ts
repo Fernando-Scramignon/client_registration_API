@@ -8,10 +8,11 @@ import { updateClientController } from "../controllers/client/updateClient.contr
 import { deleteClientController } from "../controllers/client/deleteClient.controller";
 import { createClientEmailController } from "../controllers/client/createClientEmail.controller";
 import { createClientPhoneNumberController } from "../controllers/client/createClientPhoneNumber.controller";
+import { deleteClientPhoneNumber } from "../controllers/client/deleteClientPhoneNumber.controller";
+import { deleteClientEmailController } from "../controllers/client/deleteClientEmail.controller";
 
 // middlewares
 import { verifyAuthMiddleware } from "../middlewares/verifyAuth.middleware";
-import { deleteClientEmailController } from "../controllers/client/deleteClientEmail.controller";
 
 
 export function clientRoutes(app: Express): void {
@@ -26,4 +27,5 @@ export function clientRoutes(app: Express): void {
     app.delete("/clients/emails/:emailAddress", verifyAuthMiddleware, deleteClientEmailController);
 
     app.post("/clients/phoneNumbers", verifyAuthMiddleware, createClientPhoneNumberController);
+    app.delete("/clients/phoneNumbers/:phoneNumber", verifyAuthMiddleware, deleteClientPhoneNumber);
 }
