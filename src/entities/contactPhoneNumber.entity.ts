@@ -14,7 +14,7 @@ export class ContactPhoneNumber {
     @Column({ default: false, nullable: false })
     isMain: boolean = false;
 
-    @ManyToOne(() => Contact, contact => contact.phoneNumbers, { onDelete: "CASCADE" })
+    @ManyToOne(() => Contact, contact => contact.phoneNumbers, { onDelete: "CASCADE", nullable: true })
     contact: Contact
 
     constructor() {

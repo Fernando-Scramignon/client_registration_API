@@ -25,17 +25,20 @@ export async function createContactService(username: string, data: IContactCreat
     contact.client = client;
     const newContact = await contactRep.save(contact);
 
-    const email = new ContactEmail()
-    email.emailAddress = data.emailAddress;
-    email.isMain = true;
-    email.contact = contact;
-    await contactEmailRep.save(email);
-
-    const phoneNumber = new ContactPhoneNumber();
-    phoneNumber.phoneNumber = data.phoneNumber;
-    phoneNumber.isMain = true;
-    phoneNumber.contact = contact;
-    await contactPhoneNumberRep.save(phoneNumber);
+    if (data?.emailAddress) {
+        const email = new ContactEmail()
+        email.emailAddress = data.emailAddress;
+        email.isMain = true;
+        email.contact = contact;
+        await contactEmailRep.save(email);
+    }
+    if (data?.phoneNumber) {
+        const phoneNumber = new ContactPhoneNumber();
+        phoneNumber.phoneNumber = data.phoneNumber;
+        phoneNumber.isMain = true;
+        phoneNumber.contact = contact;
+        await contactPhoneNumberRep.save(phoneNumber);
+    }
 
     const output = await contactRep.findOne(
         {

@@ -8,13 +8,13 @@ export class ContactEmail {
     @PrimaryColumn("uuid")
     readonly id: string;
 
-    @PrimaryColumn({ length: 256, unique: true })
+    @Column({ length: 256 })
     emailAddress: string;
 
     @Column({ nullable: false, default: false })
     isMain: boolean = false;
 
-    @ManyToOne(() => Contact, (contact) => contact.emails, { onDelete: "CASCADE" })
+    @ManyToOne(() => Contact, (contact) => contact.emails, { onDelete: "CASCADE", nullable: true })
     contact: Contact;
 
     constructor() {
