@@ -398,3 +398,158 @@ pdf file (i mean a real pdf file download)
 
 ---
 
+#### 1.9 create client email
+
+[Go back to start](#table-of-contents)
+
+##### `/clients/emails`
+
+##### request example:
+
+```
+GET /clients/emails
+Host: http://localhost:3000
+Authorization: Token
+Content-type: application/json
+```
+
+##### request body:
+
+```json
+{
+	"emailAddress":"saitama@gmail.com",
+	"isMain":true
+}
+```
+
+##### response example:
+
+```
+201 CREATED
+```
+
+```json
+{
+	"emailAddress":"saitama@gmail.com",
+	"isMain":true,
+	"client": {
+		"id": "ee96441b-ed3b-4207-bc4e-4950d0a0c339" 
+  		"name": "Saitama",
+  		"username": "CapedBaldy",
+  		"createdAt": "2022-09-12T19:11:21.483Z",
+	}
+}
+```
+
+---
+
+#### 1.10 delete client email
+
+[Go back to start](#table-of-contents)
+
+##### `/clients/emails`
+
+##### request example:
+
+```
+DELETE /clients/emails
+Host: http://localhost:3000
+Authorization: Token
+Content-type: application/json
+```
+
+##### request body:
+
+```json
+empty
+```
+
+##### response example:
+
+```
+204 No Content
+```
+
+```json
+No Content
+```
+
+---
+
+#### 1.11 create client Phone Number
+
+[Go back to start](#table-of-contents)
+
+##### `/clients/phoneNumbers`
+
+##### request example:
+
+```
+GET /clients/phoneNumbers
+Host: http://localhost:3000
+Authorization: Token
+Content-type: application/json
+```
+
+##### request body:
+
+```json
+{
+	"phoneNumber":"11111111111",
+	"isMain":true
+}
+```
+
+##### response example:
+
+```
+201 CREATED
+```
+
+```json
+{
+	"phoneNumber":"11111111111",
+	"isMain":true,
+	"client": {
+		"id": "ee96441b-ed3b-4207-bc4e-4950d0a0c339" 
+  		"name": "Saitama",
+  		"username": "CapedBaldy",
+  		"createdAt": "2022-09-12T19:11:21.483Z",
+	}
+}
+```
+
+---
+
+#### 1.12 delete client Phone Number
+
+[Go back to start](#table-of-contents)
+
+##### `/clients/phoneNumbers`
+
+##### request example:
+
+```
+DELETE /clients/phoneNumbers
+Host: http://localhost:3000
+Authorization: Token
+Content-type: application/json
+```
+
+##### request body:
+
+```json
+empty
+```
+
+##### response example:
+
+```
+204 No Content
+```
+
+```json
+No Content
+```
+
+---
