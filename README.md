@@ -9,8 +9,31 @@ An API developed with the objective of practicing full stack skills. This means 
 - [Setting up](#3-setting-up)
   - [Running it using docker](#31-running-it-using-docker)
   - [Running it without docker](#32-running-it-without-docker)
- - [Endpoints](#4-endpoints)
-  
+- [Endpoints](#4-endpoints)
+  - [Client](#1-client)
+  - [Endpoints Client](#11-endpoints-client)
+    - [Client creation](#12-client-creation)
+    - [Client login](#13-client-login)
+    - [Client listing](#14-client-listing)
+    - [Client update](#15-client-update)
+    - [Client deletion](#16-client-deletion)
+    - [Client main info listing](#17-client-main-info-listing)
+    - [Client account as pdf](#18-client-account-as-pdf)
+    - [Create client email](#19-create-client-email)
+    - [Delete client email](#110-delete-client-email)
+    - [Create client Phone Number](#111-create-client-phone-number)
+    - [Delete client Phone Number](#112-delete-client-phone-number)
+  - [Contact](#2-contact)
+  - [Endpoints Contact](#21-endpoints-contact)
+    - [Contact creation](#22-contact-creation)
+    - [Contact listing](#23-contact-listing)
+    - [Contact deletion](#24-contact-deletion)
+    - [Contact update](#25-contact-update)
+    - [Contact specific listing](#26-contact-specific-listing)
+    - [Contact email creation](#27-contact-email-creation)
+    - [Contact email deletion](#28-contact-email-deletion)
+    - [Contact phone number creation](#29-contact-phone-number-creation)
+    - [Contact phone number deletion](#210-contact-phone-number-deletion)
 ---
 
 ## 1. Overview
@@ -569,7 +592,7 @@ The Contact object is defined as:
 | emails      |  orm    | contact's emails, only accessed by orm (not db) |
 | phoneNumbers|  orm    | contact's email, only accessed by orm (not db)   |
 
-#### 2.1 Endpoints Client
+#### 2.1 Endpoints Contact
 
 | Method | Route                                           | Description                              |
 | ------ | ---------------------------------------------   | ---------------------------------------- |
