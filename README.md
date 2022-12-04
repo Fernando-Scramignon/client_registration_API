@@ -271,9 +271,11 @@ Content-type: application/json
 ##### request body:
 
 ```json
+{
   "name":"saitama2"
   "username": "CapedBaldy2",
   "password": "12345678Ba#"
+}
 ```
 
 ##### response example:
@@ -284,6 +286,114 @@ Content-type: application/json
 
 ```json
 No content
+```
+
+---
+
+#### 1.6 client deletion
+
+[Go back to start](#table-of-contents)
+
+##### `/clients`
+
+##### request example:
+
+```
+DELETE /clients
+Host: http://localhost:3000
+Authorization: Token
+Content-type: application/json
+```
+
+##### request body:
+
+```json
+empty
+```
+
+##### response example:
+
+```
+204 No Content
+```
+
+```json
+No content
+```
+
+---
+
+#### 1.7 client main info listing
+
+[Go back to start](#table-of-contents)
+
+##### `/clients/mainInfo`
+
+##### request example:
+
+```
+GET /clients/mainInfo
+Host: http://localhost:3000
+Authorization: Token
+Content-type: application/json
+```
+
+##### request body:
+
+```json
+empty
+```
+
+##### response example:
+
+```
+200 OK
+```
+
+```json
+{
+	"email": {
+		"isMain": true,
+		"emailAddress": "saitama@gmail.com"
+	},
+	"phone": {
+		"isMain": true,
+		"phoneNumber": "935774945"
+	}
+}
+```
+
+---
+
+#### 1.8 client account as pdf
+
+[Go back to start](#table-of-contents)
+
+##### `/clients/pdf`
+
+##### request example:
+
+```
+GET /clients/pdf
+Host: http://localhost:3000
+Authorization: Token
+Content-type: application/pdf
+```
+
+##### request body:
+
+```json
+empty
+```
+
+##### response example:
+
+```
+200 OK
+```
+
+```pdf
+pdf file (i mean a real pdf file download)
 ```
 
 ---
