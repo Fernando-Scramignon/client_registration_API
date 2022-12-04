@@ -9,6 +9,8 @@ An API developed with the objective of practicing full stack skills. This means 
 - [Setting up](#3-setting-up)
   - [Running it using docker](#31-running-it-using-docker)
   - [Running it without docker](#32-running-it-without-docker)
+  
+---
 
 ## 1. Overview
 
@@ -25,8 +27,12 @@ DB port 5431:5432 (exposed/docker)
 
 Default local URL: http://localhost:3000
 
+---
+
 ## 2. ER Diagram
-![DER](ERdiagram.jpg)
+![DER](ERDiagram.jpg)
+
+---
 
 ## 3. Setting up
 
@@ -81,6 +87,8 @@ Start the project with:
 ```bash
 yarn dev
 ```
+
+---
 
 
 
