@@ -1,6 +1,6 @@
 # client_registration_API
 
-An API developed with the objective of praticing full stack skills. This means that it is a simple back end project with a simple front end to train the integration of them both. It allows user registration and each user can have multiple contacts.
+An API developed with the objective of practicing full stack skills. This means that it is a simple back end project with a simple front end to train the integration of them both. It allows client registration and each client can have multiple contacts. It also uses pdfkit to be able to generate a pdf with the client's information.
 
 ## Table of contents
 
