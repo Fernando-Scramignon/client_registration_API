@@ -167,9 +167,9 @@ Content-type: application/json
 ```json
 {
   "id": "ee96441b-ed3b-4207-bc4e-4950d0a0c339" 
-	"name": "Saitama",
-	"username": "CapedBaldy",
-	"createdAt": "2022-09-12T19:11:21.483Z",
+  "name": "Saitama",
+  "username": "CapedBaldy",
+  "createdAt": "2022-09-12T19:11:21.483Z",
 }
 ```
 
@@ -194,8 +194,8 @@ Content-type: application/json
 
 ```json
 {
-	"username": "CapedBaldy",
-	"password": "12345678Ab#"
+  "username": "CapedBaldy",
+  "password": "12345678Ab#"
 }
 ```
 
@@ -206,7 +206,8 @@ Content-type: application/json
 ```
 
 ```json
-{ "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImZlcm5hbmRvIiwiaWF0IjoxNjcwMTI0Mzg0LCJleHAiOjE2NzAyMTA3ODR9.wH5zEEpridTBVO1sps2GwFE-SxuJe5sjYEDPhw5KYEg"
+{
+  "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImZlcm5hbmRvIiwiaWF0IjoxNjcwMTI0Mzg0LCJleHAiOjE2NzAyMTA3ODR9.wH5zEEpridTBVO1sps2GwFE-SxuJe5sjYEDPhw5KYEg"
 }
 ```
 
@@ -242,9 +243,9 @@ empty
 ```json
 {
   "id": "ee96441b-ed3b-4207-bc4e-4950d0a0c339" 
-	"name": "Saitama",
-	"username": "CapedBaldy",
-	"createdAt": "2022-09-12T19:11:21.483Z",
+  "name": "Saitama",
+  "username": "CapedBaldy",
+  "createdAt": "2022-09-12T19:11:21.483Z",
   "phoneNumbers" : [],
   "emails":[]
 }
@@ -271,8 +272,8 @@ Content-type: application/json
 
 ```json
   "name":"saitama2"
-	"username": "CapedBaldy2",
-	"password": "12345678Ba#"
+  "username": "CapedBaldy2",
+  "password": "12345678Ba#"
 ```
 
 ##### response example:
