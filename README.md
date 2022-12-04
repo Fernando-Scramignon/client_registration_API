@@ -788,7 +788,7 @@ empty
 ##### response example:
 
 ```
-200 No Content
+200 OK
 ```
 
 ```json
@@ -810,6 +810,160 @@ empty
 		}
 	]
 }
+```
+
+---
+
+#### 2.7 contact email creation
+
+[Go back to start](#table-of-contents)
+
+##### `/contacts/:contactId/emails/`
+
+##### request example:
+
+```
+POST /contacts/:contactId/emails/
+Host: http://localhost:3000
+Authorization: Token
+Content-type: application/json
+```
+
+##### request body:
+
+```json
+{
+	"emailAddress": "john2@gmail.com",
+	"isMain":true
+}
+```
+
+##### response example:
+
+```
+201 Created
+```
+
+```json
+{
+	"isMain": true,
+	"id": "2ca0bcdf-a13b-4cf9-a76f-fa733d56f29c",
+	"emailAddress": "john2@gmail.com",
+	"contact": {
+		"id": "46a7770c-1e74-405d-bf6d-102ea498f308",
+		"name": "john"
+	}
+}
+```
+
+---
+
+#### 2.8 contact email deletion
+
+[Go back to start](#table-of-contents)
+
+##### `/contacts/:contactId/emails/:emailId`
+
+##### request example:
+
+```
+DELETE /contacts/:contactId/emails/:emailId
+Host: http://localhost:3000
+Authorization: Token
+Content-type: application/json
+```
+
+##### request body:
+
+```json
+empty
+```
+
+##### response example:
+
+```
+204 No Content
+```
+
+```json
+No Content
+```
+
+---
+
+#### 2.9 contact phone number creation
+
+[Go back to start](#table-of-contents)
+
+##### `/contacts/:contactId/phoneNumbers`
+
+##### request example:
+
+```
+POST /contacts/:contactId/phoneNumbers/
+Host: http://localhost:3000
+Authorization: Token
+Content-type: application/json
+```
+
+##### request body:
+
+```json
+{
+	"phoneNumber":"11111119",
+	"isMain":true
+}
+```
+
+##### response example:
+
+```
+201 Created
+```
+
+```json
+{
+	"isMain": true,
+	"id": "b05e75e8-542b-466a-93a1-98954bee68d9",
+	"phoneNumber": "11111119",
+	"contact": {
+		"id": "46a7770c-1e74-405d-bf6d-102ea498f308",
+		"name": "john"
+	}
+}
+```
+
+---
+
+#### 2.10 contact phone number deletion
+
+[Go back to start](#table-of-contents)
+
+##### `/contacts/:contactId/phoneNumbers/:phoneNumberId`
+
+##### request example:
+
+```
+DELETE /contacts/:contactId/phoneNumbers/:phoneNumberId
+Host: http://localhost:3000
+Authorization: Token
+Content-type: application/json
+```
+
+##### request body:
+
+```json
+empty
+```
+
+##### response example:
+
+```
+204 No Content
+```
+
+```json
+No Content
 ```
 
 ---
