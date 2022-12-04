@@ -49,10 +49,10 @@ tecnologies:
 - [Docker-Compose](https://docs.docker.com/compose/)
 - [PDF kit](https://pdfkit.org/)
 
-API port 3000:3000 (exposed/docker) -----
+API port 8000:3000 (exposed/docker) -----
 DB port 5431:5432 (exposed/docker)
 
-Default local URL: http://localhost:3000
+Default local URL: http://localhost:8000
 
 ---
 
@@ -169,7 +169,7 @@ The client object is defined as:
 
 ```
 POST /clients
-Host: http://localhost:3000
+Host: http://localhost:8000
 Authorization: None
 Content-type: application/json
 ```
@@ -211,7 +211,7 @@ Content-type: application/json
 
 ```
 POST /clients/login
-Host: http://localhost:3000
+Host: http://localhost:8000
 Authorization: None
 Content-type: application/json
 ```
@@ -249,7 +249,7 @@ Content-type: application/json
 
 ```
 GET /clients
-Host: http://localhost:3000
+Host: http://localhost:8000
 Authorization: Token
 Content-type: application/json
 ```
@@ -289,7 +289,7 @@ empty
 
 ```
 PATCH /clients
-Host: http://localhost:3000
+Host: http://localhost:8000
 Authorization: Token
 Content-type: application/json
 ```
@@ -326,7 +326,7 @@ No content
 
 ```
 DELETE /clients
-Host: http://localhost:3000
+Host: http://localhost:8000
 Authorization: Token
 Content-type: application/json
 ```
@@ -359,7 +359,7 @@ No content
 
 ```
 GET /clients/mainInfo
-Host: http://localhost:3000
+Host: http://localhost:8000
 Authorization: Token
 Content-type: application/json
 ```
@@ -401,7 +401,7 @@ empty
 
 ```
 GET /clients/pdf
-Host: http://localhost:3000
+Host: http://localhost:8000
 Authorization: Token
 Content-type: application/pdf
 ```
@@ -434,7 +434,7 @@ pdf file (i mean a real pdf file download)
 
 ```
 GET /clients/emails
-Host: http://localhost:3000
+Host: http://localhost:8000
 Authorization: Token
 Content-type: application/json
 ```
@@ -479,7 +479,7 @@ Content-type: application/json
 
 ```
 DELETE /clients/emails
-Host: http://localhost:3000
+Host: http://localhost:8000
 Authorization: Token
 Content-type: application/json
 ```
@@ -512,7 +512,7 @@ No Content
 
 ```
 GET /clients/phoneNumbers
-Host: http://localhost:3000
+Host: http://localhost:8000
 Authorization: Token
 Content-type: application/json
 ```
@@ -557,7 +557,7 @@ Content-type: application/json
 
 ```
 DELETE /clients/phoneNumbers
-Host: http://localhost:3000
+Host: http://localhost:8000
 Authorization: Token
 Content-type: application/json
 ```
@@ -618,7 +618,7 @@ The Contact object is defined as:
 
 ```
 POST /contacts
-Host: http://localhost:3000
+Host: http://localhost:8000
 Authorization: Token
 Content-type: application/json
 ```
@@ -665,7 +665,7 @@ Content-type: application/json
 
 ```
 GET /contacts
-Host: http://localhost:3000
+Host: http://localhost:8000
 Authorization: Token
 Content-type: application/json
 ```
@@ -729,7 +729,7 @@ empty
 
 ```
 GET /contacts/:contactId
-Host: http://localhost:3000
+Host: http://localhost:8000
 Authorization: Token
 Content-type: application/json
 ```
@@ -762,7 +762,7 @@ No Content
 
 ```
 PATCH /contacts/:contactId
-Host: http://localhost:3000
+Host: http://localhost:8000
 Authorization: Token
 Content-type: application/json
 ```
@@ -797,7 +797,7 @@ No Content
 
 ```
 GET /contacts/:contactId
-Host: http://localhost:3000
+Host: http://localhost:8000
 Authorization: Token
 Content-type: application/json
 ```
@@ -847,7 +847,7 @@ empty
 
 ```
 POST /contacts/:contactId/emails/
-Host: http://localhost:3000
+Host: http://localhost:8000
 Authorization: Token
 Content-type: application/json
 ```
@@ -891,7 +891,7 @@ Content-type: application/json
 
 ```
 DELETE /contacts/:contactId/emails/:emailId
-Host: http://localhost:3000
+Host: http://localhost:8000
 Authorization: Token
 Content-type: application/json
 ```
@@ -924,7 +924,7 @@ No Content
 
 ```
 POST /contacts/:contactId/phoneNumbers/
-Host: http://localhost:3000
+Host: http://localhost:8000
 Authorization: Token
 Content-type: application/json
 ```
@@ -968,7 +968,7 @@ Content-type: application/json
 
 ```
 DELETE /contacts/:contactId/phoneNumbers/:phoneNumberId
-Host: http://localhost:3000
+Host: http://localhost:8000
 Authorization: Token
 Content-type: application/json
 ```
