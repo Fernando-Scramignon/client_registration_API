@@ -584,3 +584,233 @@ The Contact object is defined as:
 | DELETE | /clients/:contactId/phoneNumbers/:phoneNumberId | deletes a contact's phone number         |
 
 ---
+
+#### 2.2 contact creation
+
+[Go back to start](#table-of-contents)
+
+##### `/contacts`
+
+##### request example:
+
+```
+POST /contacts
+Host: http://localhost:3000
+Authorization: Token
+Content-type: application/json
+```
+
+##### request body:
+
+```json
+{
+	"name":"john",
+	"emailAddress":"john@gmail.com"
+}
+```
+
+##### response example:
+
+```
+201 Created
+```
+
+```json
+{
+	"id": "46a7770c-1e74-405d-bf6d-102ea498f308",
+	"name": "john",
+	"phoneNumbers": [],
+	"emails": [
+		{
+			"isMain": true,
+			"id": "2dca6278-5d3d-4b25-a6a2-1874afe09ff4",
+			"emailAddress": "john@gmail.com"
+		}
+	]
+}
+```
+
+---
+
+#### 2.3 contact listing
+
+[Go back to start](#table-of-contents)
+
+##### `/contacts`
+
+##### request example:
+
+```
+GET /contacts
+Host: http://localhost:3000
+Authorization: Token
+Content-type: application/json
+```
+
+##### request body:
+
+```json
+empty
+```
+
+##### response example:
+
+```
+200 OK
+```
+
+```json
+[
+	{
+		"id": "46a7770c-1e74-405d-bf6d-102ea498f308",
+		"name": "john",
+		"phoneNumbers": [
+			{
+				"isMain": true,
+				"id": "fa4865e0-b748-4bb0-9489-ff9077e17026",
+				"phoneNumber": "11111112"
+			}
+		],
+		"emails": [
+			{
+				"isMain": true,
+				"id": "9fa3686c-5461-4b9a-811b-45e71924db45",
+				"emailAddress": "john@gmail.com"
+			}
+		]
+	},
+	{
+		"id": "29d1f589-43e8-47f4-bf48-a2a2958099be",
+		"name": "jack",
+		"phoneNumbers": [],
+		"emails": [
+			{
+				"isMain": false,
+				"id": "9fb458f4-29f4-423b-9c20-cbf9cb0ee1fd",
+				"emailAddress": "jack@gmail.com"
+			}
+		]
+	}
+]
+```
+
+---
+
+#### 2.4 contact deletion
+
+[Go back to start](#table-of-contents)
+
+##### `/contacts/:contactId`
+
+##### request example:
+
+```
+GET /contacts/:contactId
+Host: http://localhost:3000
+Authorization: Token
+Content-type: application/json
+```
+
+##### request body:
+
+```json
+empty
+```
+
+##### response example:
+
+```
+204 No Content
+```
+
+```json
+No Content
+```
+
+---
+
+#### 2.5 contact update
+
+[Go back to start](#table-of-contents)
+
+##### `/contacts/:contactId`
+
+##### request example:
+
+```
+PATCH /contacts/:contactId
+Host: http://localhost:3000
+Authorization: Token
+Content-type: application/json
+```
+
+##### request body:
+
+```json
+{
+	"name":"carter"
+}
+```
+
+##### response example:
+
+```
+204 No Content
+```
+
+```json
+No Content
+```
+
+---
+
+#### 2.6 contact specific listing
+
+[Go back to start](#table-of-contents)
+
+##### `/contacts/:contactId`
+
+##### request example:
+
+```
+GET /contacts/:contactId
+Host: http://localhost:3000
+Authorization: Token
+Content-type: application/json
+```
+
+##### request body:
+
+```json
+empty
+```
+
+##### response example:
+
+```
+200 No Content
+```
+
+```json
+{
+	"id": "99c11353-c3c0-470f-b50f-604ed0de58dd",
+	"name": "carter",
+	"emails": [
+		{
+			"isMain": true,
+			"id": "9a70b09c-9587-4d9b-a51d-5a3418306cd9",
+			"emailAddress": "john@gmail.com"
+		}
+	],
+	"phoneNumbers": [
+		{
+			"isMain": true,
+			"id": "5e984dc0-40d2-41b7-8896-ae3c6f6ad27e",
+			"phoneNumber": "1111111111"
+		}
+	]
+}
+```
+
+---
+
