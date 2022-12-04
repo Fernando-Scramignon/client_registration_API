@@ -22,6 +22,9 @@ tecnologies:
 - [Typescript](https://www.typescriptlang.org/)
 - [PostgreSQL](https://www.postgresql.org/)
 - [TypeORM](https://typeorm.io/)
+- [Docker](https://www.docker.com/)
+- [Docker-Compose](https://docs.docker.com/compose/)
+- [PDF kit](https://pdfkit.org/)
 
 API port 3000:3000 (exposed/docker) -----
 DB port 5431:5432 (exposed/docker)
@@ -551,5 +554,33 @@ empty
 ```json
 No Content
 ```
+
+---
+
+### 2. **Contact**
+
+The Contact object is defined as:
+
+| Field       | Type    | Description                                     |
+| ----------- | ------- | ----------------------------------------------- |
+| id          | uuid    | contact's unique identifier                     |
+| name        | string  | contact's full name                             |
+| clientId    | string  | client whom contact is owned by                 |
+| emails      |  orm    | contact's emails, only accessed by orm (not db) |
+| phoneNumbers|  orm    | contact's email, only accessed by orm (not db)   |
+
+#### 2.1 Endpoints Client
+
+| Method | Route                                           | Description                              |
+| ------ | ---------------------------------------------   | ---------------------------------------- |
+| POST   | /contacts                                       | creates client's contact                 |
+| GET    | /contacts                                       | lists all client's contact info          |
+| GET    | /contacts/:contactId                            | list specific contact                    |
+| DELETE | /contacts/:contactId                            | deletes contact                          |
+| PATCH  | /contacts/:contactId                            | updates contact                          |
+| POST   | /contacts/:contactId/emails/                    | registers a contact's email address      |
+| DELETE | /contacts/:contactId/email/:emailId             | deletes a contact's email address        |
+| POST   | /contacts/:contactId/phoneNumbers/              | registers a contact's phone number       |
+| DELETE | /clients/:contactId/phoneNumbers/:phoneNumberId | deletes a contact's phone number         |
 
 ---
